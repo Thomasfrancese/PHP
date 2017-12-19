@@ -1,0 +1,18 @@
+#Date{
+    text-align: center;
+    font-size: 2em;
+}
+#ListBoissons{
+    margin: 3em;
+    font-size: 1.3em;
+}
+#attente{
+    text-align: center;
+    font-size: 1.4em;
+    color: red;
+}
+#argentInser{
+    font-size: 1.3em;
+    margin-left: 2em;
+
+}
