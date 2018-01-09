@@ -44,7 +44,7 @@ function boissonBdd()
     JOIN boisson ON boisson.CodeBoisson = boisson_has_ingredients.Boisson_CodeBoisson
     WHERE nomBoisson = :nomBoisson');
 
-  if (isset($_POST["choixBoisson"]) AND !empty($_POST["choixSucre"])) 
+  if (isset($_POST["choixBoisson"]) || empty($_POST["choixSucre"])) 
   { 
     $choice->execute(array('nomBoisson' => $_POST["choixBoisson"]));
     while ($tabChoice = $choice->fetch()) 
@@ -56,7 +56,7 @@ function boissonBdd()
       };
       $choiceUser .= $tabChoice["nomIngredients"] . " :" . $tabChoice["Quantite"] . "<br/>";
     } 
-    $choiceUser .= "Sucres " . $_POST["choixSucre"];
+    $choiceUser .= "Sucre(s) " . $_POST["choixSucre"];
   }
   else
   {
